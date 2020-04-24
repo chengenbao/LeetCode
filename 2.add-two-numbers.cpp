@@ -17,11 +17,7 @@
 #include <iostream>
 #include <vector>
 
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode(int x) : val(x), next(NULL) {}  // NOLINT
-};
+#include "common.h"
 
 #endif  // DEBUG
 
@@ -73,36 +69,10 @@ class Solution {
 
 #ifdef DEBUG
 
-ListNode* ConstructList(const std::vector<int>& vals) {
-  ListNode* head = nullptr;
-  ListNode* prev = nullptr;
-  for (auto& val : vals) {
-    auto node = new ListNode(val);
-    if (prev != nullptr) {
-      prev->next = node;
-    }
-    if (head == nullptr) {
-      head = node;
-    }
-
-    prev = node;
-  }
-
-  return head;
-}
-
-void PrintResult(ListNode* node) {
-  while (node != nullptr) {
-    std::cout << node->val;
-    node = node->next;
-  }
-  std::cout << std::endl;
-}
-
 int main(int argc, char** argv) {
   Solution s;
-  PrintResult(s.addTwoNumbers(ConstructList({2, 4, 3}),
-                              ConstructList({5, 6, 4})));
+  PrintList(s.addTwoNumbers(ConstructList({2, 4, 3}),
+                            ConstructList({5, 6, 4})));
   return 0;
 }
 
