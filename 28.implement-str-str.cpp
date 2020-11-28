@@ -1,3 +1,5 @@
+// Copyright 2019 chengenbao. All Rights Reserved.
+
 /*
 Implement strStr().
 
